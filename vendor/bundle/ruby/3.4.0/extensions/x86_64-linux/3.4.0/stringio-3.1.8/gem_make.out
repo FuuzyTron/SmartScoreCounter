@@ -1,0 +1,19 @@
+current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+/usr/bin/ruby extconf.rb
+checking for rb_io_mode_t in ruby/io.h... no
+creating Makefile
+
+current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ygxewg sitelibdir\=./.gem.20251129-175182-ygxewg clean
+
+current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ygxewg sitelibdir\=./.gem.20251129-175182-ygxewg
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ygxewg sitelibdir\=./.gem.20251129-175182-ygxewg install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20251129-175182-ygxewg
+
+current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/stringio-3.1.8/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ygxewg sitelibdir\=./.gem.20251129-175182-ygxewg clean
