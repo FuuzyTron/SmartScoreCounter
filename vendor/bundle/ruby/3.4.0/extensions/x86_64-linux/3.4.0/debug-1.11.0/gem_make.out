@@ -1,19 +1,19 @@
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
 /usr/bin/ruby extconf.rb
 creating Makefile
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-2w238t sitelibdir\=./.gem.20251129-175182-2w238t clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-2cho0i sitelibdir\=./.gem.20251129-201213-2cho0i clean
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-2w238t sitelibdir\=./.gem.20251129-175182-2w238t
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-2cho0i sitelibdir\=./.gem.20251129-201213-2cho0i
 compiling debug.c
 compiling iseq_collector.c
 linking shared-object debug/debug.so
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-2w238t sitelibdir\=./.gem.20251129-175182-2w238t install
-/usr/bin/install -c -m 0755 debug.so ./.gem.20251129-175182-2w238t/debug
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-2cho0i sitelibdir\=./.gem.20251129-201213-2cho0i install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20251129-201213-2cho0i/debug
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-2w238t sitelibdir\=./.gem.20251129-175182-2w238t clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/debug-1.11.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-2cho0i sitelibdir\=./.gem.20251129-201213-2cho0i clean

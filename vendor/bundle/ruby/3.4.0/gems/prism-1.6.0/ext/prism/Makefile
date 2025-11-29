@@ -87,7 +87,7 @@ warnflags = -Wall -Wextra -Wdeprecated-declarations -Wdiv-by-zero -Wduplicated-c
 cppflags = 
 CCDLFLAGS = -fPIC
 CFLAGS   = $(CCDLFLAGS) -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -g -ffile-prefix-map=/build/ruby/src=/usr/src/debug/ruby -flto=auto -fPIC -fvisibility=hidden $(ARCH_FLAG)
-INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) -I/home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/prism-1.6.0/include -I/home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/prism-1.6.0/ext
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) "-I/home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/prism-1.6.0/include" "-I/home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/prism-1.6.0/ext"
 DEFS     = 
 CPPFLAGS =   $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -Wp,-D_GLIBCXX_ASSERTIONS -g -ffile-prefix-map=/build/ruby/src=/usr/src/debug/ruby -flto=auto $(ARCH_FLAG)

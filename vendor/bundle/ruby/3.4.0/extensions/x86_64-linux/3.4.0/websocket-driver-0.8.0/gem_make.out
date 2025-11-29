@@ -1,18 +1,18 @@
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
 /usr/bin/ruby extconf.rb
 creating Makefile
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-i743do sitelibdir\=./.gem.20251129-175182-i743do clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-i7hf1y sitelibdir\=./.gem.20251129-201213-i7hf1y clean
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-i743do sitelibdir\=./.gem.20251129-175182-i743do
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-i7hf1y sitelibdir\=./.gem.20251129-201213-i7hf1y
 compiling websocket_mask.c
 linking shared-object websocket_mask.so
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-i743do sitelibdir\=./.gem.20251129-175182-i743do install
-/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20251129-175182-i743do
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-i7hf1y sitelibdir\=./.gem.20251129-201213-i7hf1y install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20251129-201213-i7hf1y
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-i743do sitelibdir\=./.gem.20251129-175182-i743do clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/websocket-driver-0.8.0/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-i7hf1y sitelibdir\=./.gem.20251129-201213-i7hf1y clean

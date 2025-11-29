@@ -1,4 +1,4 @@
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
 /usr/bin/ruby extconf.rb
 checking for __builtin_clz()... yes
 checking for __builtin_clzl()... yes
@@ -21,18 +21,18 @@ checking for rb_category_warn() in ruby.h... yes
 checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-aez1vh sitelibdir\=./.gem.20251129-175182-aez1vh clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-3ro6o7 sitelibdir\=./.gem.20251129-201213-3ro6o7 clean
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-aez1vh sitelibdir\=./.gem.20251129-175182-aez1vh
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-3ro6o7 sitelibdir\=./.gem.20251129-201213-3ro6o7
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-aez1vh sitelibdir\=./.gem.20251129-175182-aez1vh install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20251129-175182-aez1vh
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-3ro6o7 sitelibdir\=./.gem.20251129-201213-3ro6o7 install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20251129-201213-3ro6o7
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-aez1vh sitelibdir\=./.gem.20251129-175182-aez1vh clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/bigdecimal-3.3.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-3ro6o7 sitelibdir\=./.gem.20251129-201213-3ro6o7 clean

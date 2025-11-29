@@ -1,18 +1,18 @@
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
 /usr/bin/ruby extconf.rb
 checking for pkg-config for yaml-0.1... [" ", "", "-lyaml"]
 checking for yaml.h... yes
 checking for yaml_get_version() in -lyaml... yes
 creating Makefile
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ltmyrv sitelibdir\=./.gem.20251129-175182-ltmyrv clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-lmjwk3 sitelibdir\=./.gem.20251129-201213-lmjwk3 clean
 cd libyaml && make clean
 /bin/sh: line 1: cd: libyaml: No such file or directory
 make: [Makefile:287: clean-so] Error 1 (ignored)
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ltmyrv sitelibdir\=./.gem.20251129-175182-ltmyrv
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-lmjwk3 sitelibdir\=./.gem.20251129-201213-lmjwk3
 compiling psych.c
 compiling psych_emitter.c
 compiling psych_parser.c
@@ -20,12 +20,12 @@ compiling psych_to_ruby.c
 compiling psych_yaml_tree.c
 linking shared-object psych.so
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ltmyrv sitelibdir\=./.gem.20251129-175182-ltmyrv install
-/usr/bin/install -c -m 0755 psych.so ./.gem.20251129-175182-ltmyrv
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-lmjwk3 sitelibdir\=./.gem.20251129-201213-lmjwk3 install
+/usr/bin/install -c -m 0755 psych.so ./.gem.20251129-201213-lmjwk3
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-ltmyrv sitelibdir\=./.gem.20251129-175182-ltmyrv clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/psych-5.2.6/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-lmjwk3 sitelibdir\=./.gem.20251129-201213-lmjwk3 clean
 cd libyaml && make clean
 /bin/sh: line 1: cd: libyaml: No such file or directory
 make: [Makefile:287: clean-so] Error 1 (ignored)

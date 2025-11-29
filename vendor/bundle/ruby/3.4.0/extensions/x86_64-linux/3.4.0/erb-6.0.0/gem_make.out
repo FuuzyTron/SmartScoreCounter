@@ -1,19 +1,19 @@
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
 /usr/bin/ruby extconf.rb
 checking for rb_ext_ractor_safe() in ruby.h... yes
 creating Makefile
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-jl4fv1 sitelibdir\=./.gem.20251129-175182-jl4fv1 clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-5wss9z sitelibdir\=./.gem.20251129-201213-5wss9z clean
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-jl4fv1 sitelibdir\=./.gem.20251129-175182-jl4fv1
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-5wss9z sitelibdir\=./.gem.20251129-201213-5wss9z
 compiling escape.c
 linking shared-object erb/escape.so
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-jl4fv1 sitelibdir\=./.gem.20251129-175182-jl4fv1 install
-/usr/bin/install -c -m 0755 escape.so ./.gem.20251129-175182-jl4fv1/erb
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-5wss9z sitelibdir\=./.gem.20251129-201213-5wss9z install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20251129-201213-5wss9z/erb
 
-current directory: /home/purple/RubymineProjects/SmartScoreCounter/vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
-make DESTDIR\= sitearchdir\=./.gem.20251129-175182-jl4fv1 sitelibdir\=./.gem.20251129-175182-jl4fv1 clean
+current directory: /home/purple/RubymineProjects/SmartScoreCounter /vendor/bundle/ruby/3.4.0/gems/erb-6.0.0/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20251129-201213-5wss9z sitelibdir\=./.gem.20251129-201213-5wss9z clean
