@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>My Page</title>
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+      }
+
+      .top-section {
+          background-color: #4477AA;
+          color: white;
+          padding: 0 0 0 0;
+          height: 100px;
+      }
+
+      .header-container {
+          margin: 0 auto;
+          padding: 0 15px;
+          display: flex;
+          justify-content: normal; /* Текст слева, лого справа */
+      }
+
+      /* Ключевое изменение: текст начинается у самого левого края контейнера */
+      .top-section h1 {
+          font-size: 1.5rem;
+          text-align: left;
+          padding-top: 20px;
+          padding-left: 0;
+          margin: 0;
+          font-weight: 500;
+      }
+
+      /* Лого прижато к правому краю контейнера */
+      .logo {
+          height: 95px;
+          width: auto;
+          filter: brightness(0) invert(1);
+          margin-left: auto; /* Прижимает лого к правому краю */
+      }
+
+      .delimiter-section {
+          background-color: #f3f3f3;
+          padding-top: 9px;
+          padding-left: 15px;
+          height: 50px;
+      }
+
+      .log-button {
+          color: dimgray;
+          font-size: 14px;
+          line-height: 18px;
+          padding-left: 5px;
+          padding-top: 5px;
+          width: 180px;
+          height: 30px;
+          align-self: auto;
+          border-radius: 5px;
+          border: 1px solid darkgrey;
+          display: inline-block;
+          background: #FFFFFF;
+      }
+      .log-button:hover {
+          background: ghostwhite; }
+      .log-button:active {
+          box-shadow: 1px 2px 7px 4px rgba(68,119,170,0.38)
+           }
+
+      .content {
+          max-width: 1200px;
+          margin: 40px auto;
+          padding: 0 20px;
+          flex: 1;
+      }
+
+      .slider-container {
+          width: 100%;
+      }
+
+      .slider {
+      }
+
+      .slider:hover {
+          opacity: 1;
+      }
+
+      .bottom-section {
+          background-color: #f3f3f3;
+          padding: 20px 0;
+          margin-top: auto;
+      }
+
+
+  </style>
+</head>
+<body>
+<div class="top-section">
+  <div class="header-container">
+
+    <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+
+    <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
+  </div>
+</div>
+
+<div class="delimiter-section">
+  <div class="log-button">
+    <div>Вход</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="input-group">
+    <label for="points">Желаемые баллы: </label>
+    <input type="number" id="points" name="points" value="60" min="60" max="100">
+  </div>
+  <div class="slider-container">
+    <input type="range" min="3" max="13" value="8" class="slider" id="myRange">
+  </div>
+</div>
+
+<footer class="bottom-section">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
+    <p>© <%= Time.current.year %> Студенты ЮФУ. Все права не защищены.</p>
+    <p>Контактная информация: группа ФИИТ 3-2</p>
+  </div>
+</footer>
+</body>
+</html>
