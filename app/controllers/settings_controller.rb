@@ -19,7 +19,7 @@ class SettingsController < ApplicationController
   private
 
   def settings_params
-    params.require(:user).permit(:name, :target_points, :current_points)
+    params.require(:user).permit(:name, :target_points, :current_points, :semester_goal_lessons)
   end
 
   def save_schedule_days!

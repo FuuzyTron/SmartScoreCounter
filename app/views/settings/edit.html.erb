@@ -16,6 +16,11 @@
     <%= f.number_field :current_points, min: 0 %>
   </div>
 
+  <div>
+    <%= f.label :semester_goal_lessons, "Хочу занятий в семестре" %><br>
+    <%= f.number_field :semester_goal_lessons, min: 0 %>
+  </div>
+
   <h3>Расписание</h3>
   <% selected = @user.schedule_days.pluck(:day_of_week) %>
 

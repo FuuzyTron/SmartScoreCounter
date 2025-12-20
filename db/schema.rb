@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_20_144101) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_20_162942) do
   create_table "attendance_days", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "day"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[8.1].define(version: 2025_12_20_144101) do
     t.string "login"
     t.string "name"
     t.string "password_digest"
+    t.integer "semester_goal_lessons", default: 3, null: false
     t.integer "target_points", default: 60, null: false
     t.datetime "updated_at", null: false
   end
