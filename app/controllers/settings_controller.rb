@@ -16,6 +16,10 @@ class SettingsController < ApplicationController
     end
   end
 
+  def update_points
+
+  end
+
   private
 
   def settings_params

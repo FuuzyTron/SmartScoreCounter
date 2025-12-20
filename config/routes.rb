@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   get  "/settings", to: "settings#edit"
   patch "/settings", to: "settings#update"
+
+  patch "/update_points", to: "settings#update_points", as: "update_current_points"
 end
