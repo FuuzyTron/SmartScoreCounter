@@ -28,10 +28,9 @@
           margin: 0 auto;
           padding: 0 15px;
           display: flex;
-          justify-content: normal; /* Текст слева, лого справа */
+          justify-content: normal;
       }
 
-      /* Ключевое изменение: текст начинается у самого левого края контейнера */
       .top-section h1 {
           font-size: 1.5rem;
           text-align: left;
@@ -41,12 +40,11 @@
           font-weight: 500;
       }
 
-      /* Лого прижато к правому краю контейнера */
       .logo {
           height: 95px;
           width: auto;
           filter: brightness(0) invert(1);
-          margin-left: auto; /* Прижимает лого к правому краю */
+          margin-left: auto;
       }
 
       .delimiter-section {
@@ -54,6 +52,8 @@
           padding-top: 9px;
           padding-left: 15px;
           height: 50px;
+          display: flex;
+          align-items: center;
       }
 
       .log-button {
@@ -61,7 +61,6 @@
           font-size: 14px;
           line-height: 18px;
           padding-left: 5px;
-          padding-top: 5px;
           width: 180px;
           height: 30px;
           align-self: auto;
@@ -74,8 +73,10 @@
           background: ghostwhite; }
       .log-button:active {
           box-shadow: 1px 2px 7px 4px rgba(68,119,170,0.38)
-           }
-
+      }
+      button.log-button {
+          text-align: left;
+      }
       .content {
           max-width: 1200px;
           margin: 40px auto;
@@ -100,40 +101,101 @@
           margin-top: auto;
       }
 
+      .radio-group {
+          margin: 15px 0;
+      }
 
+      .radio-option {
+          margin: 8px 0;
+          display: flex;
+          align-items: center;
+      }
+
+      .radio-option input[type="radio"] {
+          margin-right: 10px;
+      }
   </style>
 </head>
 <body>
 <div class="top-section">
   <div class="header-container">
-
     <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
-
     <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
   </div>
 </div>
 
+<%= form_with model: current_user, url: settings_path, method: :patch, id: "main-form" do %>
+
+<% end %>
+
 <div class="delimiter-section">
-  <div class="log-button">
-    <div>Вход</div>
-  </div>
+  <% if current_user %>
+    <%= button_to 'Выход', "/logout", method: :delete, class: "log-button" %>
+    <div style="display: flex; padding-left: 5px">
+      Здравствуйте, <%= current_user.name %>, ваши дни:
+      <% selected = current_user.schedule_days.pluck(:day_of_week) %>
+
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "monday", selected.include?("monday"), form: "main-form" %> Пн
+      </label>
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "tuesday", selected.include?("tuesday"), form: "main-form" %> Вт
+      </label>
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "wednesday", selected.include?("wednesday"), form: "main-form" %> Ср
+      </label>
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "thursday", selected.include?("thursday"), form: "main-form" %> Чт
+      </label>
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "friday", selected.include?("friday"), form: "main-form" %> Пт
+      </label>
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "saturday", selected.include?("saturday"), form: "main-form" %> Сб
+      </label>
+      <label style="margin-left: 5px">
+        <%= check_box_tag "days[]", "sunday", selected.include?("sunday"), form: "main-form" %> Вс
+      </label>
+    </div>
+  <% else %>
+    <%= button_to 'Вход', "/login", method: :get, class: "log-button" %>
+  <% end %>
 </div>
 
 <div class="content">
-  <form>
-    <p>Выберете баллы:</p>
-    <div>
-      <input type="radio" id="three" name="contact" checked/>
-      <label for="three">60-70</label>
-      <input type="radio" id="four" name="contact" />
-      <label for="four">71-84</label>
-      <input type="radio" id="five" name="contact" />
-      <label for="five">85-100</label>
+  <% if current_user %>
+    <div class="radio-group">
+      <%= label_tag "user_target_points", "Цель (диапазон баллов)" %><br>
+
+      <%# Определяем, какой диапазон выбран на основе текущего значения %>
+      <% current_value = current_user.target_points.to_i %>
+      <%# Каждому диапазону соответствует минимальное значение %>
+      <% selected_60 = current_value >= 60 && current_value <= 70 %>
+      <% selected_71 = current_value >= 71 && current_value <= 84 %>
+      <% selected_85 = current_value >= 85 && current_value <= 100 %>
+
+      <div class="radio-option">
+        <%= radio_button_tag "user[target_points]", 60, selected_60, form: "main-form" %>
+        <%= label_tag "user_target_points_60", "60-70 баллов" %>
+      </div>
+
+      <div class="radio-option">
+        <%= radio_button_tag "user[target_points]", 71, selected_71, form: "main-form" %>
+        <%= label_tag "user_target_points_71", "71-84 баллов" %>
+      </div>
+
+      <div class="radio-option">
+        <%= radio_button_tag "user[target_points]", 85, selected_85, form: "main-form" %>
+        <%= label_tag "user_target_points_85", "85-100 баллов" %>
+      </div>
     </div>
-    <div>
-      <div class="log-button">Выбрать</div>
+
+    <div style="margin-top: 12px;">
+      <button type="submit" form="main-form" style="padding: 8px 16px; background: #4477AA; color: white; border: none; border-radius: 4px;">
+        Сохранить
+      </button>
     </div>
-  </form>
+  <% end %>
 
   <%= month_calendar do |date| %>
     <%= date %>

@@ -43,6 +43,7 @@
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.8.8, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.3, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="base64 (v0.3.0, Remote: ruby-3.4.7-p58) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.20, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt_pbkdf (v1.1.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bigdecimal (v3.3.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
@@ -114,6 +115,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v8.1.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.3.0, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.6.2, Remote: ruby-3.4.7-p58) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails-i18n (v8.1.0, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v8.1.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.3.1, Remote: ruby-3.4.7-p58) [gem]" level="application" />
@@ -252,7 +254,7 @@
       <value>file://$MODULE_DIR$/public/stylesheets</value>
     </entry>
     <entry key="test/mailers/previews">
-      <value>file:///mnt/c/Users/likut/RubymineProjects2/TailwindTest/test/mailers/previews</value>
+      <value>file:///mnt/c/Users/likut/RubymineProjects2/SmartScoreCounter3/test/mailers/previews</value>
       <value>file://$MODULE_DIR$/test/mailers/previews</value>
     </entry>
     <entry key="tmp">

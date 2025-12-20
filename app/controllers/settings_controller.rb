@@ -10,7 +10,7 @@ class SettingsController < ApplicationController
 
     if @user.update(settings_params)
       save_schedule_days!
-      redirect_to settings_path, notice: "Сохранено"
+      redirect_to root_path, notice: "Сохранено"
     else
       render :edit, status: :unprocessable_entity
     end
