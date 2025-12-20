@@ -1,0 +1,37 @@
+<h1>Регистрация</h1>
+
+<%= form_with model: @user, url: signup_path do |f| %>
+  <div>
+    <%= f.label :name, "Имя" %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :login, "Ник" %><br>
+    <%= f.text_field :login %>
+  </div>
+
+  <div>
+    <%= f.label :password, "Пароль" %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, "Пароль ещё раз" %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= f.label :target_points, "Хочу баллов" %><br>
+    <%= f.number_field :target_points, min: 0 %>
+  </div>
+
+  <div>
+    <%= f.label :current_points, "Сейчас баллов" %><br>
+    <%= f.number_field :current_points, min: 0 %>
+  </div>
+
+  <div>
+    <%= f.submit "Создать аккаунт" %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Вход</h1>
+
+<%= form_with url: login_path do |f| %>
+  <div>
+    <%= label_tag :login, "Ник" %><br>
+    <%= text_field_tag :login %>
+  </div>
+
+  <div>
+    <%= label_tag :password, "Пароль" %><br>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div>
+    <%= f.submit "Войти" %>
+  </div>
+<% end %>
