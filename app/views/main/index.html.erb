@@ -120,18 +120,29 @@
 </div>
 
 <div class="content">
-  <div class="input-group">
-    <label for="points">Желаемые баллы: </label>
-    <input type="number" id="points" name="points" value="60" min="60" max="100">
-  </div>
-  <div class="slider-container">
-    <input type="range" min="3" max="13" value="8" class="slider" id="myRange">
-  </div>
+  <form>
+    <p>Выберете баллы:</p>
+    <div>
+      <input type="radio" id="three" name="contact" checked/>
+      <label for="three">60-70</label>
+      <input type="radio" id="four" name="contact" />
+      <label for="four">71-84</label>
+      <input type="radio" id="five" name="contact" />
+      <label for="five">85-100</label>
+    </div>
+    <div>
+      <div class="log-button">Выбрать</div>
+    </div>
+  </form>
+
+  <%= month_calendar do |date| %>
+    <%= date %>
+  <% end %>
 </div>
 
 <footer class="bottom-section">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
-    <p>© <%= Time.current.year %> Студенты ЮФУ. Все права не защищены.</p>
+    <p>© 2025 Студенты ЮФУ. Все права не защищены.</p>
     <p>Контактная информация: группа ФИИТ 3-2</p>
   </div>
 </footer>

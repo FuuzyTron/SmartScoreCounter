@@ -66,3 +66,7 @@ group :test do
 end
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem "simple_calendar"
+
+gem 'rails-i18n'

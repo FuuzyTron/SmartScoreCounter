@@ -1,0 +1,7 @@
+# e.g. config/locales/de.yml
+ru:
+  simple_calendar:
+    previous: "<<"
+    next: ">>"
+    today: Сегодня
+    week: Неделя
