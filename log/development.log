@@ -2840,3 +2840,212 @@ Processing by MainController#index as HTML
 Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Migrating to SetDefaultPointsForUsers (20251220143935)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251220143935') RETURNING "version" /*application='SmartScoreCounter'*/[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Migrating to SetDefaultPointsForUsers (20251220144101)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer, "current_points" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60, "current_points" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60, "current_points" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60, "current_points" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "users" SET "target_points"=60 WHERE "target_points" IS NULL /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60, "current_points" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60 NOT NULL, "current_points" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "users" SET "current_points"=0 WHERE "current_points" IS NULL /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60 NOT NULL, "current_points" integer DEFAULT 0, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "login" varchar, "password_digest" varchar, "target_points" integer DEFAULT 60 NOT NULL, "current_points" integer DEFAULT 0 NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='SmartScoreCounter'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","name","login","password_digest","target_points","current_points","created_at","updated_at")
+                     SELECT "id","name","login","password_digest","target_points","current_points","created_at","updated_at" FROM "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers" /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='SmartScoreCounter'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20251220144101') RETURNING "version" /*application='SmartScoreCounter'*/[0m
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='SmartScoreCounter'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-12-20 17:44:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 7.7ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 14.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2025-12-20 17:44:14 +0300
+Processing by SettingsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering settings/edit.html.erb within layouts/application
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 2 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/views/settings/edit.html.erb:21
+  Rendered settings/edit.html.erb within layouts/application (Duration: 21.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 21.8ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-20 17:45:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 7.3ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 12.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2025-12-20 17:45:59 +0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 3.1ms | ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2025-12-20 17:46:13 +0300
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2025-12-20 17:46:39 +0300
+Processing by SettingsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering settings/edit.html.erb within layouts/application
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 2 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/views/settings/edit.html.erb:21
+  Rendered settings/edit.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-20 17:47:09 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"name" => "Герман", "target_points" => "60", "current_points" => "8"}, "days" => ["wednesday"], "commit" => "Сохранить"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'fuuz' AND "users"."id" != 2 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 2 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:27:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:28:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 2 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:28:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (2, 3, '2025-12-20 14:47:09.381830', '2025-12-20 14:47:09.381830') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:28:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:28:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/settings
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 48ms (ActiveRecord: 27.6ms (5 queries, 0 cached) | GC: 23.3ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2025-12-20 17:47:09 +0300
+Processing by SettingsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering settings/edit.html.erb within layouts/application
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 2 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/views/settings/edit.html.erb:21
+  Rendered settings/edit.html.erb within layouts/application (Duration: 2.2ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.5ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2025-12-20 17:47:11 +0300
+Processing by SettingsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering settings/edit.html.erb within layouts/application
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 2 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/views/settings/edit.html.erb:21
+  Rendered settings/edit.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2025-12-20 17:47:18 +0300
+Processing by SettingsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering settings/edit.html.erb within layouts/application
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 2 /*action='edit',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/views/settings/edit.html.erb:21
+  Rendered settings/edit.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
