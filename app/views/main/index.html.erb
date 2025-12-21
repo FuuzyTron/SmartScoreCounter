@@ -407,9 +407,9 @@
                 const strategyDiv = document.querySelector('.current-points-display div[style*="margin-top: 20px"]');
                 if (data.possible) {
                     strategyDiv.innerHTML = `
-                Чтобы набрать минимум <b>${data.total_points}</b> баллов при выбранных днях,
-                посетите <b>${data.attend_term1}</b> занятий осенью и
-                <b>${data.attend_term2}</b> занятий весной.
+                Вы наберёте <b>${data.total_points}</b> баллов
+                при выбранных днях, посетив <b>${data.attend_term1}</b> занятий в первом семестре и
+                <b>${data.attend_term2}</b> во втором семестре.
             `;
                     strategyDiv.style.color = '';
                 } else {
