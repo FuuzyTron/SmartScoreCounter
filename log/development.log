@@ -10225,3 +10225,163 @@ Processing by MainController#calculate_strategy as */*
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-12-22 00:57:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 8.6ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 1.3ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 00:57:28 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 00:57:29 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 9, "target_points" => "71", "main" => {"semester_goal_lessons" => 9, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 00:57:30 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 8, "target_points" => "71", "main" => {"semester_goal_lessons" => 8, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-22 01:07:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 8.7ms | ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:09 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:09 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 11, "target_points" => "71", "main" => {"semester_goal_lessons" => 11, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:09 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:09 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 9, "target_points" => "71", "main" => {"semester_goal_lessons" => 9, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:09 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 8, "target_points" => "71", "main" => {"semester_goal_lessons" => 8, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:09 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 7, "target_points" => "71", "main" => {"semester_goal_lessons" => 7, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:10 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 6, "target_points" => "71", "main" => {"semester_goal_lessons" => 6, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:26 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 5, "target_points" => "71", "main" => {"semester_goal_lessons" => 5, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:27 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 4, "target_points" => "71", "main" => {"semester_goal_lessons" => 4, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-22 01:08:27 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 3, "target_points" => "71", "main" => {"semester_goal_lessons" => 3, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/services/points_strategy.rb:7:in 'PointsStrategy.compute'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+

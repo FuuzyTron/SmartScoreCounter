@@ -1,56 +1,37 @@
 class PointsStrategy
-  WEEKDAY_INDEXES = {
-    sunday:    0,
-    monday:    1,
-    tuesday:   2,
-    wednesday: 3,
-    thursday:  4,
-    friday:    5,
-    saturday:  6
-  }.freeze
+  WEEKDAY_INDEXES = { sunday: 0, monday: 1, tuesday: 2, wednesday: 3, thursday: 4, friday: 5, saturday: 6 }.freeze
 
-  def self.compute(weekdays:, target_range:, year:)
+  def self.compute(user:, target_points:, target_range:, semester_goal_lessons: nil)
+    # ✅ PRIORITY: params > DB > default
+    lessons = semester_goal_lessons || user.semester_goal_lessons || 10
+    weekdays = user.schedule_days.pluck(:day_of_week).map(&:to_sym)
+
     chosen_wdays = weekdays.map { |w| WEEKDAY_INDEXES.fetch(w) }
+    count_lessons = ->(from, to) { (from..to).count { |d| chosen_wdays.include?(d.wday) } }
 
-    count_lessons = lambda do |from_date, to_date|
-      (from_date..to_date).count { |d| chosen_wdays.include?(d.wday) }
-    end
+    # Academic year dates
+    max_term1 = count_lessons.call(Date.new(2025, 10, 1), Date.new(2025, 12, 28))
+    max_term2 = count_lessons.call(Date.new(2026, 2, 1), Date.new(2026, 5, 31))
 
-    term1_start = Date.new(year, 10, 1)
-    term1_end   = Date.new(year, 12, 28)
-    term2_start = Date.new(year + 1, 2, 1)
-    term2_end   = Date.new(year + 1, 5, 31)
+    # YOUR LOGIC: Fixed Term1 → compute Term2
+    attend_term1 = [lessons, max_term1].min
+    points_term1 = attend_term1 * 4
+    remaining = [target_points - points_term1, 0].max
+    attend_term2 = (remaining.to_f / 3).ceil.clamp(0, max_term2)
 
-    total_term1_days = count_lessons.call(term1_start, term1_end)
-    total_term2_days = count_lessons.call(term2_start, term2_end)
+    total_points = attend_term1 * 4 + attend_term2 * 3
+    max_possible = max_term1 * 4 + max_term2 * 3
 
-    max_points = total_term1_days * 4 + total_term2_days * 3
-    return { possible: false, max_points: max_points } if max_points < target_range.begin
+    result = {
+      attend_term1: attend_term1,
+      attend_term2: attend_term2,
+      total_points: total_points,
+      current_points: user.current_points || 0
+    }
 
-    best = nil
-
-    (0..total_term1_days).each do |attend1|
-      (0..total_term2_days).each do |attend2|
-        points = attend1 * 4 + attend2 * 3
-        next if points < target_range.begin
-
-        candidate = {
-          attend_term1: attend1,
-          attend_term2: attend2,
-          total_points: points
-        }
-
-        if best.nil? ||
-           points < best[:total_points] ||
-           (points == best[:total_points] &&
-             attend1 + attend2 < best[:attend_term1] + best[:attend_term2])
-          best = candidate
-        end
-      end
-    end
-
-    best.merge(possible: true, max_points: max_points)
+    result.merge(
+      possible: total_points >= target_points && total_points >= target_range.begin,
+      max_points: max_possible.round(-1)
+    )
   end
 end
-# frozen_string_literal: true
-
