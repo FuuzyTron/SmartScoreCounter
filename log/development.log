@@ -8507,3 +8507,1721 @@ Processing by MainController#index as HTML
 Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.4ms)
 
 
+Started PATCH "/update_points" for 127.0.0.1 at 2025-12-21 22:53:24 +0300
+Processing by SettingsController#update_points as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "delta" => "-3", "commit" => "-3 балла"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update_points',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_points',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:26:in 'SettingsController#update_points'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update_points',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:26:in 'SettingsController#update_points'
+  [1m[36mUser Update (0.0ms)[0m  [1m[33mUPDATE "users" SET "current_points" = 70, "updated_at" = '2025-12-21 19:53:24.992392' WHERE "users"."id" = 6 /*action='update_points',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:26:in 'SettingsController#update_points'
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_points',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:26:in 'SettingsController#update_points'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:28:in 'SettingsController#update_points'
+Completed 302 Found in 30ms (ActiveRecord: 17.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 22:53:25 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 5.3ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 22:54:35 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 10.2ms | GC: 3.3ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 15.7ms | GC: 4.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | GC: 4.5ms)
+Completed 200 OK in 65ms (Views: 26.8ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 16.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:11:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 1.3ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:106: syntax errors found
+  [2m104 | [m'.freeze;
+  [2m105 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m106 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m107 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb):
+1:    <div class="top-section">
+2:      <div class="header-container">
+3:        <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+4:        <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
+5:      </div>
+6:    </div>
+7:    
+8:    <% if current_user %>
+9:      <%= form_with model: current_user,
+10:                    url: settings_path,
+11:                    method: :patch,
+12:                    id: "main-form" do |f| %>
+13:    
+14:        <div class="delimiter-section">
+15:          <%= button_to 'Выход', "/logout", method: :delete, class: "log-button" %>
+16:          <div style="display: flex;padding-left: 50px">
+17:            Здравствуйте, <%= current_user.name %>, ваши дни:
+18:            <% selected = current_user.schedule_days.pluck(:day_of_week) %>
+19:    
+20:            <label style="margin-left: 5px">
+21:              <%= check_box_tag "days[]", "monday", selected.include?("monday"), form: "main-form" %> Пн
+22:            </label>
+23:            <label style="margin-left: 5px">
+24:              <%= check_box_tag "days[]", "tuesday", selected.include?("tuesday"), form: "main-form" %> Вт
+25:            </label>
+26:            <label style="margin-left: 5px">
+27:              <%= check_box_tag "days[]", "wednesday", selected.include?("wednesday"), form: "main-form" %> Ср
+28:            </label>
+29:            <label style="margin-left: 5px">
+30:              <%= check_box_tag "days[]", "thursday", selected.include?("thursday"), form: "main-form" %> Чт
+31:            </label>
+32:            <label style="margin-left: 5px">
+33:              <%= check_box_tag "days[]", "friday", selected.include?("friday"), form: "main-form" %> Пт
+34:            </label>
+35:          </div>
+36:        </div>
+37:    
+38:        <div class="content">
+39:          <div class="left-panel">
+40:            <div class="settings-container">
+41:              <div class="radio-group">
+42:                <%= f.label :target_points,
+43:                            "Цель (диапазон баллов)",
+44:                            style: "font-weight: bold; font-size: 16px;" %><br>
+45:    
+46:                <% current_value = current_user.target_points.to_i %>
+47:                <% selected_60 = current_value >= 60 && current_value <= 70 %>
+48:                <% selected_71 = current_value >= 71 && current_value <= 84 %>
+49:                <% selected_85 = current_value >= 85 && current_value <= 100 %>
+50:    
+51:                <div class="radio-option">
+52:                  <%= radio_button_tag "user[target_points]", 60, selected_60, form: "main-form" %>
+53:                  <%= label_tag "user_target_points_60", "60-70 баллов", style: "font-size: 14px;" %>
+54:                </div>
+55:    
+56:                <div class="radio-option">
+57:                  <%= radio_button_tag "user[target_points]", 71, selected_71, form: "main-form" %>
+58:                  <%= label_tag "user_target_points_71", "71-84 баллов", style: "font-size: 14px;" %>
+59:                </div>
+60:    
+61:                <div class="radio-option">
+62:                  <%= radio_button_tag "user[target_points]", 85, selected_85, form: "main-form" %>
+63:                  <%= label_tag "user_target_points_85", "85-100 баллов", style: "font-size: 14px;" %>
+64:                </div>
+65:              </div>
+66:    
+67:              <div class="goal-slider-container">
+68:                <%= f.label :semester_goal_lessons,
+69:                            "Хочу занятий в семестре",
+70:                            style: "font-weight: bold; font-size: 16px;" %><br>
+71:    
+72:                <% current_lessons = current_user.semester_goal_lessons || 10 %>
+73:    
+74:                <div class="slider-wrapper">
+75:                  <%= f.range_field :semester_goal_lessons,
+76:                                    min: 3,
+77:                                    max: 13,
+78:                                    value: current_lessons,
+79:                                    id: "semester_goal_slider",
+80:                                    class: "slider",
+81:                                    oninput: "updateSliderValue(this.value)" %>
+82:                </div>
+83:    
+84:                <div id="sliderValue"
+85:                     class="slider-value"><%= current_lessons %> занятий</div>
+86:              </div>
+87:            </div>
+88:    
+89:            <div style="margin-top: 5px; text-align: center;">
+90:              <button type="submit" style="padding: 12px; background: #4477AA; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+91:                Сохранить настройки
+92:              </button>
+93:            </div>
+94:    
+95:            <div class="calendar-container">
+96:              <%= month_calendar do |date| %>
+97:                <div style="text-align: center; padding: 5px;">
+98:                  <%= date.day %>
+99:                </div>
+100:              <% end %>
+101:            </div>
+102:          </div>
+  
+app/views/main/index.html.erb:106: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:106: syntax errors found
+  [2m104 | [m'.freeze;
+  [2m105 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m106 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m107 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+):
+  
+app/views/main/index.html.erb:106: syntax errors found
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:11:13 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:106: syntax errors found
+  [2m104 | [m'.freeze;
+  [2m105 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m106 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m107 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb):
+1:    <div class="top-section">
+2:      <div class="header-container">
+3:        <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+4:        <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
+5:      </div>
+6:    </div>
+7:    
+8:    <% if current_user %>
+9:      <%= form_with model: current_user,
+10:                    url: settings_path,
+11:                    method: :patch,
+12:                    id: "main-form" do |f| %>
+13:    
+14:        <div class="delimiter-section">
+15:          <%= button_to 'Выход', "/logout", method: :delete, class: "log-button" %>
+16:          <div style="display: flex;padding-left: 50px">
+17:            Здравствуйте, <%= current_user.name %>, ваши дни:
+18:            <% selected = current_user.schedule_days.pluck(:day_of_week) %>
+19:    
+20:            <label style="margin-left: 5px">
+21:              <%= check_box_tag "days[]", "monday", selected.include?("monday"), form: "main-form" %> Пн
+22:            </label>
+23:            <label style="margin-left: 5px">
+24:              <%= check_box_tag "days[]", "tuesday", selected.include?("tuesday"), form: "main-form" %> Вт
+25:            </label>
+26:            <label style="margin-left: 5px">
+27:              <%= check_box_tag "days[]", "wednesday", selected.include?("wednesday"), form: "main-form" %> Ср
+28:            </label>
+29:            <label style="margin-left: 5px">
+30:              <%= check_box_tag "days[]", "thursday", selected.include?("thursday"), form: "main-form" %> Чт
+31:            </label>
+32:            <label style="margin-left: 5px">
+33:              <%= check_box_tag "days[]", "friday", selected.include?("friday"), form: "main-form" %> Пт
+34:            </label>
+35:          </div>
+36:        </div>
+37:    
+38:        <div class="content">
+39:          <div class="left-panel">
+40:            <div class="settings-container">
+41:              <div class="radio-group">
+42:                <%= f.label :target_points,
+43:                            "Цель (диапазон баллов)",
+44:                            style: "font-weight: bold; font-size: 16px;" %><br>
+45:    
+46:                <% current_value = current_user.target_points.to_i %>
+47:                <% selected_60 = current_value >= 60 && current_value <= 70 %>
+48:                <% selected_71 = current_value >= 71 && current_value <= 84 %>
+49:                <% selected_85 = current_value >= 85 && current_value <= 100 %>
+50:    
+51:                <div class="radio-option">
+52:                  <%= radio_button_tag "user[target_points]", 60, selected_60, form: "main-form" %>
+53:                  <%= label_tag "user_target_points_60", "60-70 баллов", style: "font-size: 14px;" %>
+54:                </div>
+55:    
+56:                <div class="radio-option">
+57:                  <%= radio_button_tag "user[target_points]", 71, selected_71, form: "main-form" %>
+58:                  <%= label_tag "user_target_points_71", "71-84 баллов", style: "font-size: 14px;" %>
+59:                </div>
+60:    
+61:                <div class="radio-option">
+62:                  <%= radio_button_tag "user[target_points]", 85, selected_85, form: "main-form" %>
+63:                  <%= label_tag "user_target_points_85", "85-100 баллов", style: "font-size: 14px;" %>
+64:                </div>
+65:              </div>
+66:    
+67:              <div class="goal-slider-container">
+68:                <%= f.label :semester_goal_lessons,
+69:                            "Хочу занятий в семестре",
+70:                            style: "font-weight: bold; font-size: 16px;" %><br>
+71:    
+72:                <% current_lessons = current_user.semester_goal_lessons || 10 %>
+73:    
+74:                <div class="slider-wrapper">
+75:                  <%= f.range_field :semester_goal_lessons,
+76:                                    min: 3,
+77:                                    max: 13,
+78:                                    value: current_lessons,
+79:                                    id: "semester_goal_slider",
+80:                                    class: "slider",
+81:                                    oninput: "updateSliderValue(this.value)" %>
+82:                </div>
+83:    
+84:                <div id="sliderValue"
+85:                     class="slider-value"><%= current_lessons %> занятий</div>
+86:              </div>
+87:            </div>
+88:    
+89:            <div style="margin-top: 5px; text-align: center;">
+90:              <button type="submit" style="padding: 12px; background: #4477AA; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+91:                Сохранить настройки
+92:              </button>
+93:            </div>
+94:    
+95:            <div class="calendar-container">
+96:              <%= month_calendar do |date| %>
+97:                <div style="text-align: center; padding: 5px;">
+98:                  <%= date.day %>
+99:                </div>
+100:              <% end %>
+101:            </div>
+102:          </div>
+  
+app/views/main/index.html.erb:106: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:106: syntax errors found
+  [2m104 | [m'.freeze;
+  [2m105 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m106 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m107 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+):
+  
+app/views/main/index.html.erb:106: syntax errors found
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:13:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.0ms | GC: 3.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 3.9ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 34.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:106: syntax errors found
+  [2m104 | [m'.freeze;
+  [2m105 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m106 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m107 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb):
+1:    <div class="top-section">
+2:      <div class="header-container">
+3:        <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+4:        <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
+5:      </div>
+6:    </div>
+7:    
+8:    <% if current_user %>
+9:      <%= form_with model: current_user,
+10:                    url: settings_path,
+11:                    method: :patch,
+12:                    id: "main-form" do |f| %>
+13:    
+14:        <div class="delimiter-section">
+15:          <%= button_to 'Выход', "/logout", method: :delete, class: "log-button" %>
+16:          <div style="display: flex;padding-left: 50px">
+17:            Здравствуйте, <%= current_user.name %>, ваши дни:
+18:            <% selected = current_user.schedule_days.pluck(:day_of_week) %>
+19:    
+20:            <label style="margin-left: 5px">
+21:              <%= check_box_tag "days[]", "monday", selected.include?("monday"), form: "main-form" %> Пн
+22:            </label>
+23:            <label style="margin-left: 5px">
+24:              <%= check_box_tag "days[]", "tuesday", selected.include?("tuesday"), form: "main-form" %> Вт
+25:            </label>
+26:            <label style="margin-left: 5px">
+27:              <%= check_box_tag "days[]", "wednesday", selected.include?("wednesday"), form: "main-form" %> Ср
+28:            </label>
+29:            <label style="margin-left: 5px">
+30:              <%= check_box_tag "days[]", "thursday", selected.include?("thursday"), form: "main-form" %> Чт
+31:            </label>
+32:            <label style="margin-left: 5px">
+33:              <%= check_box_tag "days[]", "friday", selected.include?("friday"), form: "main-form" %> Пт
+34:            </label>
+35:          </div>
+36:        </div>
+37:    
+38:        <div class="content">
+39:          <div class="left-panel">
+40:            <div class="settings-container">
+41:              <div class="radio-group">
+42:                <%= f.label :target_points,
+43:                            "Цель (диапазон баллов)",
+44:                            style: "font-weight: bold; font-size: 16px;" %><br>
+45:    
+46:                <% current_value = current_user.target_points.to_i %>
+47:                <% selected_60 = current_value >= 60 && current_value <= 70 %>
+48:                <% selected_71 = current_value >= 71 && current_value <= 84 %>
+49:                <% selected_85 = current_value >= 85 && current_value <= 100 %>
+50:    
+51:                <div class="radio-option">
+52:                  <%= radio_button_tag "user[target_points]", 60, selected_60, form: "main-form" %>
+53:                  <%= label_tag "user_target_points_60", "60-70 баллов", style: "font-size: 14px;" %>
+54:                </div>
+55:    
+56:                <div class="radio-option">
+57:                  <%= radio_button_tag "user[target_points]", 71, selected_71, form: "main-form" %>
+58:                  <%= label_tag "user_target_points_71", "71-84 баллов", style: "font-size: 14px;" %>
+59:                </div>
+60:    
+61:                <div class="radio-option">
+62:                  <%= radio_button_tag "user[target_points]", 85, selected_85, form: "main-form" %>
+63:                  <%= label_tag "user_target_points_85", "85-100 баллов", style: "font-size: 14px;" %>
+64:                </div>
+65:              </div>
+66:    
+67:              <div class="goal-slider-container">
+68:                <%= f.label :semester_goal_lessons,
+69:                            "Хочу занятий в семестре",
+70:                            style: "font-weight: bold; font-size: 16px;" %><br>
+71:    
+72:                <% current_lessons = current_user.semester_goal_lessons || 10 %>
+73:    
+74:                <div class="slider-wrapper">
+75:                  <%= f.range_field :semester_goal_lessons,
+76:                                    min: 3,
+77:                                    max: 13,
+78:                                    value: current_lessons,
+79:                                    id: "semester_goal_slider",
+80:                                    class: "slider",
+81:                                    oninput: "updateSliderValue(this.value)" %>
+82:                </div>
+83:    
+84:                <div id="sliderValue"
+85:                     class="slider-value"><%= current_lessons %> занятий</div>
+86:              </div>
+87:            </div>
+88:    
+89:            <div style="margin-top: 5px; text-align: center;">
+90:              <button type="submit" style="padding: 12px; background: #4477AA; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+91:                Сохранить настройки
+92:              </button>
+93:            </div>
+94:    
+95:            <div class="calendar-container">
+96:              <%= month_calendar do |date| %>
+97:                <div style="text-align: center; padding: 5px;">
+98:                  <%= date.day %>
+99:                </div>
+100:              <% end %>
+101:            </div>
+102:          </div>
+  
+app/views/main/index.html.erb:106: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:106: syntax errors found
+  [2m104 | [m'.freeze;
+  [2m105 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m106 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m107 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+):
+  
+app/views/main/index.html.erb:106: syntax errors found
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:16:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:19
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 7.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 9.1ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:17:33 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 4.9ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 1.2ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 53.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:107: syntax errors found
+  [2m105 | [m'.freeze;   end 
+  [2m106 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m107 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m108 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb):
+1:    <div class="top-section">
+2:      <div class="header-container">
+3:        <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+4:        <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
+5:      </div>
+6:    </div>
+7:    
+8:    <% if current_user %>
+9:      <%= form_with model: current_user,
+10:                    url: settings_path,
+11:                    method: :patch,
+12:                    id: "main-form" do |f| %>
+13:    
+14:        <div class="delimiter-section">
+15:          <%= button_to 'Выход', "/logout", method: :delete, class: "log-button" %>
+16:          <div style="display: flex;padding-left: 50px">
+17:            Здравствуйте, <%= current_user.name %>, ваши дни:
+18:            <% selected = current_user.schedule_days.pluck(:day_of_week) %>
+19:    
+20:            <label style="margin-left: 5px">
+21:              <%= check_box_tag "days[]", "monday", selected.include?("monday"), form: "main-form" %> Пн
+22:            </label>
+23:            <label style="margin-left: 5px">
+24:              <%= check_box_tag "days[]", "tuesday", selected.include?("tuesday"), form: "main-form" %> Вт
+25:            </label>
+26:            <label style="margin-left: 5px">
+27:              <%= check_box_tag "days[]", "wednesday", selected.include?("wednesday"), form: "main-form" %> Ср
+28:            </label>
+29:            <label style="margin-left: 5px">
+30:              <%= check_box_tag "days[]", "thursday", selected.include?("thursday"), form: "main-form" %> Чт
+31:            </label>
+32:            <label style="margin-left: 5px">
+33:              <%= check_box_tag "days[]", "friday", selected.include?("friday"), form: "main-form" %> Пт
+34:            </label>
+35:          </div>
+36:        </div>
+37:    
+38:        <div class="content">
+39:          <div class="left-panel">
+40:            <div class="settings-container">
+41:              <div class="radio-group">
+42:                <%= f.label :target_points,
+43:                            "Цель (диапазон баллов)",
+44:                            style: "font-weight: bold; font-size: 16px;" %><br>
+45:    
+46:                <% current_value = current_user.target_points.to_i %>
+47:                <% selected_60 = current_value >= 60 && current_value <= 70 %>
+48:                <% selected_71 = current_value >= 71 && current_value <= 84 %>
+49:                <% selected_85 = current_value >= 85 && current_value <= 100 %>
+50:    
+51:                <div class="radio-option">
+52:                  <%= radio_button_tag "user[target_points]", 60, selected_60, form: "main-form" %>
+53:                  <%= label_tag "user_target_points_60", "60-70 баллов", style: "font-size: 14px;" %>
+54:                </div>
+55:    
+56:                <div class="radio-option">
+57:                  <%= radio_button_tag "user[target_points]", 71, selected_71, form: "main-form" %>
+58:                  <%= label_tag "user_target_points_71", "71-84 баллов", style: "font-size: 14px;" %>
+59:                </div>
+60:    
+61:                <div class="radio-option">
+62:                  <%= radio_button_tag "user[target_points]", 85, selected_85, form: "main-form" %>
+63:                  <%= label_tag "user_target_points_85", "85-100 баллов", style: "font-size: 14px;" %>
+64:                </div>
+65:              </div>
+66:    
+67:              <div class="goal-slider-container">
+68:                <%= f.label :semester_goal_lessons,
+69:                            "Хочу занятий в семестре",
+70:                            style: "font-weight: bold; font-size: 16px;" %><br>
+71:    
+72:                <% current_lessons = current_user.semester_goal_lessons || 10 %>
+73:    
+74:                <div class="slider-wrapper">
+75:                  <%= f.range_field :semester_goal_lessons,
+76:                                    min: 3,
+77:                                    max: 13,
+78:                                    value: current_lessons,
+79:                                    id: "semester_goal_slider",
+80:                                    class: "slider",
+81:                                    oninput: "updateSliderValue(this.value)" %>
+82:                </div>
+83:    
+84:                <div id="sliderValue"
+85:                     class="slider-value"><%= current_lessons %> занятий
+86:                </div>
+87:              </div>
+88:            </div>
+89:    
+90:            <div style="margin-top: 5px; text-align: center;">
+91:              <button type="submit" style="padding: 12px; background: #4477AA; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+92:                Сохранить настройки
+93:              </button>
+94:            </div>
+95:    
+96:            <div class="calendar-container">
+97:              <%= month_calendar do |date| %>
+98:                <div style="text-align: center; padding: 5px;">
+99:                  <%= date.day %>
+100:                </div>
+101:              <% end %>
+102:            </div>
+103:          </div>
+104:      <% end %>
+  
+app/views/main/index.html.erb:107: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:107: syntax errors found
+  [2m105 | [m'.freeze;   end 
+  [2m106 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m107 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m108 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+):
+  
+app/views/main/index.html.erb:107: syntax errors found
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:18:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 18.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb)
+Caused by: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:107: syntax errors found
+  [2m105 | [m'.freeze;
+  [2m106 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m107 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m108 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template located at: app/views/main/index.html.erb):
+1:    <div class="top-section">
+2:      <div class="header-container">
+3:        <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+4:        <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
+5:      </div>
+6:    </div>
+7:    
+8:    <% if current_user %>
+9:      <%= form_with model: current_user,
+10:                    url: settings_path,
+11:                    method: :patch,
+12:                    id: "main-form" do |f| %>
+13:    
+14:        <div class="delimiter-section">
+15:          <%= button_to 'Выход', "/logout", method: :delete, class: "log-button" %>
+16:          <div style="display: flex;padding-left: 50px">
+17:            Здравствуйте, <%= current_user.name %>, ваши дни:
+18:            <% selected = current_user.schedule_days.pluck(:day_of_week) %>
+19:    
+20:            <label style="margin-left: 5px">
+21:              <%= check_box_tag "days[]", "monday", selected.include?("monday"), form: "main-form" %> Пн
+22:            </label>
+23:            <label style="margin-left: 5px">
+24:              <%= check_box_tag "days[]", "tuesday", selected.include?("tuesday"), form: "main-form" %> Вт
+25:            </label>
+26:            <label style="margin-left: 5px">
+27:              <%= check_box_tag "days[]", "wednesday", selected.include?("wednesday"), form: "main-form" %> Ср
+28:            </label>
+29:            <label style="margin-left: 5px">
+30:              <%= check_box_tag "days[]", "thursday", selected.include?("thursday"), form: "main-form" %> Чт
+31:            </label>
+32:            <label style="margin-left: 5px">
+33:              <%= check_box_tag "days[]", "friday", selected.include?("friday"), form: "main-form" %> Пт
+34:            </label>
+35:          </div>
+36:        </div>
+37:    
+38:        <div class="content">
+39:          <div class="left-panel">
+40:            <div class="settings-container">
+41:              <div class="radio-group">
+42:                <%= f.label :target_points,
+43:                            "Цель (диапазон баллов)",
+44:                            style: "font-weight: bold; font-size: 16px;" %><br>
+45:    
+46:                <% current_value = current_user.target_points.to_i %>
+47:                <% selected_60 = current_value >= 60 && current_value <= 70 %>
+48:                <% selected_71 = current_value >= 71 && current_value <= 84 %>
+49:                <% selected_85 = current_value >= 85 && current_value <= 100 %>
+50:    
+51:                <div class="radio-option">
+52:                  <%= radio_button_tag "user[target_points]", 60, selected_60, form: "main-form" %>
+53:                  <%= label_tag "user_target_points_60", "60-70 баллов", style: "font-size: 14px;" %>
+54:                </div>
+55:    
+56:                <div class="radio-option">
+57:                  <%= radio_button_tag "user[target_points]", 71, selected_71, form: "main-form" %>
+58:                  <%= label_tag "user_target_points_71", "71-84 баллов", style: "font-size: 14px;" %>
+59:                </div>
+60:    
+61:                <div class="radio-option">
+62:                  <%= radio_button_tag "user[target_points]", 85, selected_85, form: "main-form" %>
+63:                  <%= label_tag "user_target_points_85", "85-100 баллов", style: "font-size: 14px;" %>
+64:                </div>
+65:              </div>
+66:    
+67:              <div class="goal-slider-container">
+68:                <%= f.label :semester_goal_lessons,
+69:                            "Хочу занятий в семестре",
+70:                            style: "font-weight: bold; font-size: 16px;" %><br>
+71:    
+72:                <% current_lessons = current_user.semester_goal_lessons || 10 %>
+73:    
+74:                <div class="slider-wrapper">
+75:                  <%= f.range_field :semester_goal_lessons,
+76:                                    min: 3,
+77:                                    max: 13,
+78:                                    value: current_lessons,
+79:                                    id: "semester_goal_slider",
+80:                                    class: "slider",
+81:                                    oninput: "updateSliderValue(this.value)" %>
+82:                </div>
+83:    
+84:                <div id="sliderValue"
+85:                     class="slider-value"><%= current_lessons %> занятий
+86:                </div>
+87:              </div>
+88:            </div>
+89:    
+90:            <div style="margin-top: 5px; text-align: center;">
+91:              <button type="submit" style="padding: 12px; background: #4477AA; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;">
+92:                Сохранить настройки
+93:              </button>
+94:            </div>
+95:    
+96:            <div class="calendar-container">
+97:              <%= month_calendar do |date| %>
+98:                <div style="text-align: center; padding: 5px;">
+99:                  <%= date.day %>
+100:                </div>
+101:              <% end %>
+102:            </div>
+103:          </div>
+  
+app/views/main/index.html.erb:107: syntax errors found
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/home/mikhail/programming/ruby/projects/SmartScoreCounter/app/views/main/index.html.erb:107: syntax errors found
+  [2m105 | [m'.freeze;
+  [2m106 | [m@output_buffer.safe_append='<!-- END app/views/main/index.html.erb -->';@output_buffer
+[1;31m> [m[2m107 | [m          end
+  [2m    | [m             [1;31m^[m unexpected end-of-input, assuming it is closing the parent top level context
+[1;31m> [m[2m108 | [m
+  [2m    | [m[1;31m^[m expected an `end` to close the `def` statement
+
+  [2m    | [m[1;31m^[m expected an `end` to close the conditional clause
+):
+  
+app/views/main/index.html.erb:107: syntax errors found
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:21:21 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:19
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 8.3ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:21:39 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:21:40 +0300
+Processing by MainController#index as HTML
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 8.1ms | GC: 0.0ms)
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 9.5ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 18.8ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 19.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | GC: 0.0ms)
+Completed 200 OK in 143ms (Views: 25.0ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 49.3ms)
+
+
+Completed 200 OK in 139ms (Views: 26.5ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 47.9ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 23:21:46 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "12"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = '2025-12-21 20:21:46.379116', "semester_goal_lessons" = 12 WHERE "users"."id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 20:21:46.414128', '2025-12-21 20:21:46.414128') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 20:21:46.417716', '2025-12-21 20:21:46.417716') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 45ms (ActiveRecord: 10.8ms (8 queries, 0 cached) | GC: 6.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:21:46 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 1.6ms | GC: 0.2ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 23:21:51 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "5"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Update (0.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = '2025-12-21 20:21:51.558722', "semester_goal_lessons" = 5 WHERE "users"."id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 20:21:51.562695', '2025-12-21 20:21:51.562695') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.0ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 20:21:51.565242', '2025-12-21 20:21:51.565242') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms (8 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:21:51 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.2ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 1.5ms | GC: 0.2ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:24:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 11.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+Completed 200 OK in 134ms (Views: 17.2ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 53.7ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:24:36 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/main/calculate_strategy"):
+  
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 23:24:38 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "6"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Update (0.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = '2025-12-21 20:24:38.846775', "semester_goal_lessons" = 6 WHERE "users"."id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 20:24:38.889863', '2025-12-21 20:24:38.889863') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.0ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 20:24:38.892297', '2025-12-21 20:24:38.892297') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 51ms (ActiveRecord: 18.7ms (8 queries, 0 cached) | GC: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:24:38 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.0ms | GC: 0.3ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 3.6ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.3ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:24:41 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.9ms | GC: 0.4ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.4ms)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:31:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 11.7ms | GC: 5.3ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 17.4ms | GC: 5.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | GC: 5.6ms)
+Completed 200 OK in 120ms (Views: 22.9ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 36.7ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-12-21 23:31:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:31:17 +0300
+  
+AbstractController::ActionNotFound (The action 'calculate_strategy' could not be found for MainController):
+  
+actionpack (8.1.1) lib/abstract_controller/base.rb:149:in 'AbstractController::Base#process'
+actionview (8.1.1) lib/action_view/rendering.rb:40:in 'ActionView::Rendering#process'
+actionpack (8.1.1) lib/action_controller/metal.rb:252:in 'ActionController::Metal#dispatch'
+actionpack (8.1.1) lib/action_controller/metal.rb:335:in 'ActionController::Metal.dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:65:in 'ActionDispatch::Routing::RouteSet::Dispatcher#dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:50:in 'ActionDispatch::Routing::RouteSet::Dispatcher#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:35:in 'block in ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:86:in 'block in ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'Array#each'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:31:in 'ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:906:in 'ActionDispatch::Routing::RouteSet#call'
+railties (8.1.1) lib/rails/engine/lazy_route_set.rb:60:in 'Rails::Engine::LazyRouteSet#call'
+rack (3.2.4) lib/rack/tempfile_reaper.rb:20:in 'Rack::TempfileReaper#call'
+rack (3.2.4) lib/rack/etag.rb:29:in 'Rack::ETag#call'
+rack (3.2.4) lib/rack/conditional_get.rb:44:in 'Rack::ConditionalGet#call'
+rack (3.2.4) lib/rack/head.rb:15:in 'Rack::Head#call'
+actionpack (8.1.1) lib/action_dispatch/http/content_security_policy.rb:38:in 'ActionDispatch::ContentSecurityPolicy::Middleware#call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in 'Rack::Session::Abstract::Persisted#context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in 'Rack::Session::Abstract::Persisted#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/cookies.rb:708:in 'ActionDispatch::Cookies#call'
+activerecord (8.1.1) lib/active_record/migration.rb:671:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:101:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in 'Propshaft::QuietAssets#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.4) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.2.4) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in 'Propshaft::Server#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in 'Rack::Sendfile#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.1.1) lib/rails/engine.rb:534:in 'Rails::Engine#call'
+puma (7.1.0) lib/puma/configuration.rb:300:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (7.1.0) lib/puma/request.rb:101:in 'block in Puma::Request#handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in 'Puma::ThreadPool#with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in 'Puma::Request#handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
+puma (7.1.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:31:17 +0300
+  
+AbstractController::ActionNotFound (The action 'calculate_strategy' could not be found for MainController):
+  
+actionpack (8.1.1) lib/abstract_controller/base.rb:149:in 'AbstractController::Base#process'
+actionview (8.1.1) lib/action_view/rendering.rb:40:in 'ActionView::Rendering#process'
+actionpack (8.1.1) lib/action_controller/metal.rb:252:in 'ActionController::Metal#dispatch'
+actionpack (8.1.1) lib/action_controller/metal.rb:335:in 'ActionController::Metal.dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:65:in 'ActionDispatch::Routing::RouteSet::Dispatcher#dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:50:in 'ActionDispatch::Routing::RouteSet::Dispatcher#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:35:in 'block in ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:86:in 'block in ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'Array#each'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:31:in 'ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:906:in 'ActionDispatch::Routing::RouteSet#call'
+railties (8.1.1) lib/rails/engine/lazy_route_set.rb:60:in 'Rails::Engine::LazyRouteSet#call'
+rack (3.2.4) lib/rack/tempfile_reaper.rb:20:in 'Rack::TempfileReaper#call'
+rack (3.2.4) lib/rack/etag.rb:29:in 'Rack::ETag#call'
+rack (3.2.4) lib/rack/conditional_get.rb:44:in 'Rack::ConditionalGet#call'
+rack (3.2.4) lib/rack/head.rb:15:in 'Rack::Head#call'
+actionpack (8.1.1) lib/action_dispatch/http/content_security_policy.rb:38:in 'ActionDispatch::ContentSecurityPolicy::Middleware#call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in 'Rack::Session::Abstract::Persisted#context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in 'Rack::Session::Abstract::Persisted#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/cookies.rb:708:in 'ActionDispatch::Cookies#call'
+activerecord (8.1.1) lib/active_record/migration.rb:671:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:101:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in 'Propshaft::QuietAssets#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.4) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.2.4) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in 'Propshaft::Server#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in 'Rack::Sendfile#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.1.1) lib/rails/engine.rb:534:in 'Rails::Engine#call'
+puma (7.1.0) lib/puma/configuration.rb:300:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (7.1.0) lib/puma/request.rb:101:in 'block in Puma::Request#handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in 'Puma::ThreadPool#with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in 'Puma::Request#handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
+puma (7.1.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:31:17 +0300
+  
+AbstractController::ActionNotFound (The action 'calculate_strategy' could not be found for MainController):
+  
+actionpack (8.1.1) lib/abstract_controller/base.rb:149:in 'AbstractController::Base#process'
+actionview (8.1.1) lib/action_view/rendering.rb:40:in 'ActionView::Rendering#process'
+actionpack (8.1.1) lib/action_controller/metal.rb:252:in 'ActionController::Metal#dispatch'
+actionpack (8.1.1) lib/action_controller/metal.rb:335:in 'ActionController::Metal.dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:65:in 'ActionDispatch::Routing::RouteSet::Dispatcher#dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:50:in 'ActionDispatch::Routing::RouteSet::Dispatcher#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:35:in 'block in ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:86:in 'block in ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'Array#each'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:31:in 'ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:906:in 'ActionDispatch::Routing::RouteSet#call'
+railties (8.1.1) lib/rails/engine/lazy_route_set.rb:60:in 'Rails::Engine::LazyRouteSet#call'
+rack (3.2.4) lib/rack/tempfile_reaper.rb:20:in 'Rack::TempfileReaper#call'
+rack (3.2.4) lib/rack/etag.rb:29:in 'Rack::ETag#call'
+rack (3.2.4) lib/rack/conditional_get.rb:44:in 'Rack::ConditionalGet#call'
+rack (3.2.4) lib/rack/head.rb:15:in 'Rack::Head#call'
+actionpack (8.1.1) lib/action_dispatch/http/content_security_policy.rb:38:in 'ActionDispatch::ContentSecurityPolicy::Middleware#call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in 'Rack::Session::Abstract::Persisted#context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in 'Rack::Session::Abstract::Persisted#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/cookies.rb:708:in 'ActionDispatch::Cookies#call'
+activerecord (8.1.1) lib/active_record/migration.rb:671:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:101:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in 'Propshaft::QuietAssets#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.4) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.2.4) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in 'Propshaft::Server#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in 'Rack::Sendfile#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.1.1) lib/rails/engine.rb:534:in 'Rails::Engine#call'
+puma (7.1.0) lib/puma/configuration.rb:300:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (7.1.0) lib/puma/request.rb:101:in 'block in Puma::Request#handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in 'Puma::ThreadPool#with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in 'Puma::Request#handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
+puma (7.1.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:31:17 +0300
+  
+AbstractController::ActionNotFound (The action 'calculate_strategy' could not be found for MainController):
+  
+actionpack (8.1.1) lib/abstract_controller/base.rb:149:in 'AbstractController::Base#process'
+actionview (8.1.1) lib/action_view/rendering.rb:40:in 'ActionView::Rendering#process'
+actionpack (8.1.1) lib/action_controller/metal.rb:252:in 'ActionController::Metal#dispatch'
+actionpack (8.1.1) lib/action_controller/metal.rb:335:in 'ActionController::Metal.dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:65:in 'ActionDispatch::Routing::RouteSet::Dispatcher#dispatch'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:50:in 'ActionDispatch::Routing::RouteSet::Dispatcher#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:35:in 'block in ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:86:in 'block in ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'Array#each'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:66:in 'ActionDispatch::Journey::Router#recognize'
+actionpack (8.1.1) lib/action_dispatch/journey/router.rb:31:in 'ActionDispatch::Journey::Router#serve'
+actionpack (8.1.1) lib/action_dispatch/routing/route_set.rb:906:in 'ActionDispatch::Routing::RouteSet#call'
+railties (8.1.1) lib/rails/engine/lazy_route_set.rb:60:in 'Rails::Engine::LazyRouteSet#call'
+rack (3.2.4) lib/rack/tempfile_reaper.rb:20:in 'Rack::TempfileReaper#call'
+rack (3.2.4) lib/rack/etag.rb:29:in 'Rack::ETag#call'
+rack (3.2.4) lib/rack/conditional_get.rb:44:in 'Rack::ConditionalGet#call'
+rack (3.2.4) lib/rack/head.rb:15:in 'Rack::Head#call'
+actionpack (8.1.1) lib/action_dispatch/http/content_security_policy.rb:38:in 'ActionDispatch::ContentSecurityPolicy::Middleware#call'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:274:in 'Rack::Session::Abstract::Persisted#context'
+rack-session (2.1.1) lib/rack/session/abstract/id.rb:268:in 'Rack::Session::Abstract::Persisted#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/cookies.rb:708:in 'ActionDispatch::Cookies#call'
+activerecord (8.1.1) lib/active_record/migration.rb:671:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:101:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+propshaft (1.3.1) lib/propshaft/quiet_assets.rb:11:in 'Propshaft::QuietAssets#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.2.4) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.2.4) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in 'ActionDispatch::Executor#call'
+propshaft (1.3.1) lib/propshaft/server.rb:37:in 'Propshaft::Server#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in 'Rack::Sendfile#call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.1.1) lib/rails/engine.rb:534:in 'Rails::Engine#call'
+puma (7.1.0) lib/puma/configuration.rb:300:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (7.1.0) lib/puma/request.rb:101:in 'block in Puma::Request#handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in 'Puma::ThreadPool#with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in 'Puma::Request#handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in 'Puma::Server#process_client'
+puma (7.1.0) lib/puma/server.rb:262:in 'block in Puma::Server#run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in 'block in Puma::ThreadPool#spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:34:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 14.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 16.7ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-12-21 23:34:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 23:35:02 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "6"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (16.2ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (14.7ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 20:35:02.322617', '2025-12-21 20:35:02.322617') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 20:35:02.325004', '2025-12-21 20:35:02.325004') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 48ms (ActiveRecord: 33.0ms (7 queries, 0 cached) | GC: 13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:35:02 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 1.8ms | GC: 0.3ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.8ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-12-21 23:35:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:14 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 7, "target_points" => "71", "main" => {"semester_goal_lessons" => 7, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:14 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 8, "target_points" => "71", "main" => {"semester_goal_lessons" => 8, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 2.7ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:15 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 9, "target_points" => "71", "main" => {"semester_goal_lessons" => 9, "target_points" => "71"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 23:35:17 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "9"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Update (0.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = '2025-12-21 20:35:17.810090', "semester_goal_lessons" = 9 WHERE "users"."id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.2ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 20:35:17.820937', '2025-12-21 20:35:17.820937') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 20:35:17.827208', '2025-12-21 20:35:17.827208') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 27ms (ActiveRecord: 8.3ms (8 queries, 0 cached) | GC: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 23:35:17 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.7ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:239
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.9ms | GC: 0.5ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.5ms)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-12-21 23:35:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:27 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:27 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 11, "target_points" => "71", "main" => {"semester_goal_lessons" => 11, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:28 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 12, "target_points" => "71", "main" => {"semester_goal_lessons" => 12, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:28 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 13, "target_points" => "71", "main" => {"semester_goal_lessons" => 13, "target_points" => "71"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:28 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 12, "target_points" => "71", "main" => {"semester_goal_lessons" => 12, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 16.7ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:29 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 11, "target_points" => "71", "main" => {"semester_goal_lessons" => 11, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:29 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:29 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 9, "target_points" => "71", "main" => {"semester_goal_lessons" => 9, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:29 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 8, "target_points" => "71", "main" => {"semester_goal_lessons" => 8, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:30 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 7, "target_points" => "71", "main" => {"semester_goal_lessons" => 7, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 1.6ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:30 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 6, "target_points" => "71", "main" => {"semester_goal_lessons" => 6, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:30 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 5, "target_points" => "71", "main" => {"semester_goal_lessons" => 5, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:30 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 4, "target_points" => "71", "main" => {"semester_goal_lessons" => 4, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:31 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 3, "target_points" => "71", "main" => {"semester_goal_lessons" => 3, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:32 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 4, "target_points" => "71", "main" => {"semester_goal_lessons" => 4, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:32 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 5, "target_points" => "71", "main" => {"semester_goal_lessons" => 5, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:33 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 6, "target_points" => "71", "main" => {"semester_goal_lessons" => 6, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:34 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 7, "target_points" => "71", "main" => {"semester_goal_lessons" => 7, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:36 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 8, "target_points" => "71", "main" => {"semester_goal_lessons" => 8, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:37 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 9, "target_points" => "71", "main" => {"semester_goal_lessons" => 9, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:37 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:39 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 11, "target_points" => "71", "main" => {"semester_goal_lessons" => 11, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:39 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 12, "target_points" => "71", "main" => {"semester_goal_lessons" => 12, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:40 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 13, "target_points" => "71", "main" => {"semester_goal_lessons" => 13, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 12, "target_points" => "71", "main" => {"semester_goal_lessons" => 12, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 11, "target_points" => "71", "main" => {"semester_goal_lessons" => 11, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 10, "target_points" => "71", "main" => {"semester_goal_lessons" => 10, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 9, "target_points" => "71", "main" => {"semester_goal_lessons" => 9, "target_points" => "71"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 8, "target_points" => "71", "main" => {"semester_goal_lessons" => 8, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 7, "target_points" => "71", "main" => {"semester_goal_lessons" => 7, "target_points" => "71"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 6, "target_points" => "71", "main" => {"semester_goal_lessons" => 6, "target_points" => "71"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 5, "target_points" => "71", "main" => {"semester_goal_lessons" => 5, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:41 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 4, "target_points" => "71", "main" => {"semester_goal_lessons" => 4, "target_points" => "71"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/main/calculate_strategy" for 127.0.0.1 at 2025-12-21 23:35:42 +0300
+Processing by MainController#calculate_strategy as */*
+  Parameters: {"semester_goal_lessons" => 3, "target_points" => "71", "main" => {"semester_goal_lessons" => 3, "target_points" => "71"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='calculate_strategy',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+

@@ -16,4 +16,18 @@ class MainController < ApplicationController
       year: Time.current.year
     )
   end
+
+  def calculate_strategy
+    lessons = params[:semester_goal_lessons].to_i
+    target = params[:target_points].to_i
+
+    render json: {
+      current_points: current_user&.current_points || 0,
+      possible: true,
+      total_points: target,
+      attend_term1: lessons,
+      attend_term2: lessons - 2,
+      max_points: target + 10
+    }
+  end
 end

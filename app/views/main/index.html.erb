@@ -302,9 +302,10 @@
                    value="<%= current_lessons %>"
                    class="slider"
                    form="main-form"
-                   oninput="updateSliderValue(this.value)"
+                   oninput="updateSliderValue(this.value); updatePointsStrategy(this.value)"
             >
           </div>
+
 
           <div id="sliderValue" class="slider-value"><%= current_lessons %> занятий</div>
         </div>
@@ -383,15 +384,61 @@
 </div>
 <script>
     function updateSliderValue(value) {
-        document.querySelector('.slider-value').textContent = value + ' занятий';
+        document.querySelector('#sliderValue').textContent = value + ' занятий';
     }
 
+    function updatePointsStrategy(lessons) {
+        fetch('/main/calculate_strategy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({
+                semester_goal_lessons: parseInt(lessons),
+                target_points: document.querySelector('input[name="user[target_points]"]:checked')?.value || 60
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Обновляем правую панель
+                document.querySelector('.current-points-value').textContent = data.current_points;
+
+                const strategyDiv = document.querySelector('.current-points-display div[style*="margin-top: 20px"]');
+                if (data.possible) {
+                    strategyDiv.innerHTML = `
+                Чтобы набрать минимум <b>${data.total_points}</b> баллов при выбранных днях,
+                посетите <b>${data.attend_term1}</b> занятий осенью и
+                <b>${data.attend_term2}</b> занятий весной.
+            `;
+                    strategyDiv.style.color = '';
+                } else {
+                    strategyDiv.innerHTML = `
+                При выбранных днях максимальный возможный результат —
+                <b>${data.max_points}</b> баллов. Этого недостаточно для выбранного диапазона.
+            `;
+                    strategyDiv.style.color = '#a00';
+                }
+            });
+    }
+
+    // При загрузке
     document.addEventListener('DOMContentLoaded', function () {
         const slider = document.getElementById('semester_goal_slider');
         if (slider) {
             updateSliderValue(slider.value);
         }
+
+        // Обновляем при смене radio
+        document.querySelectorAll('input[name="user[target_points]"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const slider = document.getElementById('semester_goal_slider');
+                if (slider) updatePointsStrategy(slider.value);
+            });
+        });
     });
+</script>
+
 </script>
 <footer class="bottom-section">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
