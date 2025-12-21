@@ -17,7 +17,15 @@ class SettingsController < ApplicationController
   end
 
   def update_points
+    @user   = current_user
+    delta   = params[:delta].to_i
+    current = @user.current_points || 0
 
+    new_value = [current + delta, 0].max
+
+    @user.update!(current_points: new_value)
+
+    redirect_to root_path, notice: "Баллы обновлены на #{delta}"
   end
 
   private
@@ -27,7 +35,7 @@ class SettingsController < ApplicationController
   end
 
   def save_schedule_days!
-    days = Array(params[:days]) # например ["monday", "thursday"]
+    days = Array(params[:days])
     @user.schedule_days.delete_all
     days.each { |day| @user.schedule_days.create!(day_of_week: day) }
   end
