@@ -345,7 +345,7 @@
         <% elsif current_user && @points_strategy %>
           <div style="margin-top: 20px; text-align: center; font-size: 14px; color: #a00;">
             При выбранных днях максимальный возможный результат —
-            <%= @points_strategy[:max_points] %> баллов. Этого недостаточно
+            <%= @points_strategy[:total_points] %> баллов. Этого недостаточно
             для выбранного диапазона.
           </div>
         <% end %>
@@ -415,7 +415,7 @@
                 } else {
                     strategyDiv.innerHTML = `
                 При выбранных днях максимальный возможный результат —
-                <b>${data.max_points}</b> баллов. Этого недостаточно для выбранного диапазона.
+                <b>${data.total_points}</b> баллов. Этого недостаточно для выбранного диапазона.
             `;
                     strategyDiv.style.color = '#a00';
                 }
