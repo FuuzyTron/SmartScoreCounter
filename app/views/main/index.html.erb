@@ -337,10 +337,10 @@
 
         <% if current_user && @points_strategy && @points_strategy[:possible] %>
           <div style="margin-top: 20px; text-align: center; font-size: 14px;">
-            Чтобы набрать минимум <%= @points_strategy[:total_points] %> баллов
-            при выбранных днях, посетите
-            <b><%= @points_strategy[:attend_term1] %></b> занятий осенью
-            и <b><%= @points_strategy[:attend_term2] %></b> занятий весной.
+            Вы наберёте <%= @points_strategy[:total_points] %> баллов
+            при выбранных днях, посетив
+            <b><%= @points_strategy[:attend_term1] %></b> занятий в первом семестре
+            и <b><%= @points_strategy[:attend_term2] %></b> занятий во втором семестре.
           </div>
         <% elsif current_user && @points_strategy %>
           <div style="margin-top: 20px; text-align: center; font-size: 14px; color: #a00;">
