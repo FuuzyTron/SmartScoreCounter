@@ -8448,3 +8448,62 @@ Processing by MainController#index as HTML
 Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-12-21 22:47:15 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:5:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 3.2ms | GC: 0.4ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | GC: 0.9ms)
+Completed 200 OK in 34ms (Views: 9.9ms | ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 11.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 22:47:26 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionView::Template::Error (Passed nil to the :model argument, expect an object or false)
+Caused by: ArgumentError (Passed nil to the :model argument, expect an object or false)
+
+Information for: ActionView::Template::Error (Passed nil to the :model argument, expect an object or false):
+    220: </div>
+    221: 
+    222: <%= form_with model: current_user, url: settings_path, method: :patch, id: "main-form" do %>
+    223: 
+    224: <% end %>
+    225: 
+    226: <div class="delimiter-section">
+  
+app/views/main/index.html.erb:223
+
+Information for cause: ArgumentError (Passed nil to the :model argument, expect an object or false):
+  
+app/views/main/index.html.erb:223
+Started GET "/" for 127.0.0.1 at 2025-12-21 22:51:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.3ms)
+Completed 200 OK in 17ms (Views: 7.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.4ms)
+
+

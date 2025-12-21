@@ -67,14 +67,19 @@
           display: inline-block;
           background: #FFFFFF;
       }
+
       .log-button:hover {
-          background: ghostwhite; }
-      .log-button:active {
-          box-shadow: 1px 2px 7px 4px rgba(68,119,170,0.38)
+          background: ghostwhite;
       }
+
+      .log-button:active {
+          box-shadow: 1px 2px 7px 4px rgba(68, 119, 170, 0.38)
+      }
+
       button.log-button {
           text-align: left;
       }
+
       .content {
           max-width: 1200px;
           margin: 40px auto;
@@ -219,7 +224,9 @@
   </div>
 </div>
 
-<%= form_with model: current_user, url: settings_path, method: :patch, id: "main-form" do %>
+<% if current_user %>
+  <%= form_with model: current_user, url: settings_path, method: :patch, id: "main-form" do %>
+  <% end %>
 
 <% end %>
 
@@ -256,7 +263,8 @@
     <% if current_user %>
       <div class="settings-container">
         <div class="radio-group">
-          <%= label_tag "user_target_points", "Цель (диапазон баллов)", style: "font-weight: bold; font-size: 16px;" %><br>
+          <%= label_tag "user_target_points", "Цель (диапазон баллов)", style: "font-weight: bold; font-size: 16px;" %>
+          <br>
 
           <% current_value = current_user.target_points.to_i %>
           <% selected_60 = current_value >= 60 && current_value <= 70 %>
@@ -280,7 +288,8 @@
         </div>
 
         <div class="goal-slider-container">
-          <%= label_tag "user_semester_goal_lessons", "Хочу занятий в семестре", style: "font-weight: bold; font-size: 16px;" %><br>
+          <%= label_tag "user_semester_goal_lessons", "Хочу занятий в семестре", style: "font-weight: bold; font-size: 16px;" %>
+          <br>
 
           <% current_lessons = current_user.semester_goal_lessons || 10 %>
 
@@ -377,7 +386,7 @@
         document.querySelector('.slider-value').textContent = value + ' занятий';
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const slider = document.getElementById('semester_goal_slider');
         if (slider) {
             updateSliderValue(slider.value);
