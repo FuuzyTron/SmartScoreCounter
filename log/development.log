@@ -7449,3 +7449,308 @@ Processing by MainController#index as HTML
 Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 16:59:49 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "8"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (16.1ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 13:59:49.195580', '2025-12-21 13:59:49.195580') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 13:59:49.199369', '2025-12-21 13:59:49.199369') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 36ms (ActiveRecord: 19.3ms (7 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 16:59:49 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:4:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/views/main/index.html.erb:224
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 17:14:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 1.3ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Array)
+Caused by: TypeError (no implicit conversion of String into Array)
+
+Information for: ActionView::Template::Error (no implicit conversion of String into Array):
+    27: 
+    28:           <% td_classes = calendar.td_classes_for(day) %>
+    29:           <% td_classes += " chosen-day" if chosen %>
+    30: 
+    31:           <%= content_tag :td, class: td_classes do %>
+    32:             <% instance_exec(day, calendar.sorted_events_for(day), &passed_block) %>
+    33:           <% end %>
+  
+app/views/simple_calendar/_month_calendar.html.erb:30:in 'Array#+'
+app/views/simple_calendar/_month_calendar.html.erb:30
+app/views/simple_calendar/_month_calendar.html.erb:25:in 'Array#each'
+app/views/simple_calendar/_month_calendar.html.erb:25
+app/views/simple_calendar/_month_calendar.html.erb:23:in 'Array#each'
+app/views/simple_calendar/_month_calendar.html.erb:23:in 'Enumerable#each_slice'
+app/views/simple_calendar/_month_calendar.html.erb:23
+app/views/main/index.html.erb:313
+
+Information for cause: TypeError (no implicit conversion of String into Array):
+  
+app/views/simple_calendar/_month_calendar.html.erb:30:in 'Array#+'
+app/views/simple_calendar/_month_calendar.html.erb:30
+app/views/simple_calendar/_month_calendar.html.erb:25:in 'Array#each'
+app/views/simple_calendar/_month_calendar.html.erb:25
+app/views/simple_calendar/_month_calendar.html.erb:23:in 'Array#each'
+app/views/simple_calendar/_month_calendar.html.erb:23:in 'Enumerable#each_slice'
+app/views/simple_calendar/_month_calendar.html.erb:23
+app/views/main/index.html.erb:313
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-12-21 17:14:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-12-21 17:16:28 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='SmartScoreCounter'*/[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 7.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 8.9ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/?start_date=2026-01-05" for 127.0.0.1 at 2025-12-21 17:16:35 +0300
+Processing by MainController#index as HTML
+  Parameters: {"start_date" => "2026-01-05"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 3.2ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?start_date=2026-01-05" for 127.0.0.1 at 2025-12-21 17:16:40 +0300
+Processing by MainController#index as HTML
+  Parameters: {"start_date" => "2026-01-05"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.3ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 9.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/?start_date=2026-01-05" for 127.0.0.1 at 2025-12-21 17:16:42 +0300
+Processing by MainController#index as HTML
+  Parameters: {"start_date" => "2026-01-05"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 17:16:47 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["monday", "wednesday", "friday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "8"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (6.8ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 1 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.2ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 1, '2025-12-21 14:16:47.824354', '2025-12-21 14:16:47.824354') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.2ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 14:16:47.830434', '2025-12-21 14:16:47.830434') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 5 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 5, '2025-12-21 14:16:47.835285', '2025-12-21 14:16:47.835285') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 32ms (ActiveRecord: 12.7ms (9 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 17:16:47 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 17:16:56 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "user" => {"target_points" => "71", "semester_goal_lessons" => "8"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 17:16:56 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/settings" for 127.0.0.1 at 2025-12-21 17:16:59 +0300
+Processing by SettingsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "days" => ["wednesday"], "user" => {"target_points" => "71", "semester_goal_lessons" => "8"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."login" = 'Михаил' AND "users"."id" != 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:11:in 'SettingsController#update'
+  [1m[36mScheduleDay Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:39:in 'SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "schedule_days" WHERE "schedule_days"."day_of_week" = 3 AND "schedule_days"."user_id" = 6 LIMIT 1 /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mScheduleDay Create (0.1ms)[0m  [1m[32mINSERT INTO "schedule_days" ("user_id", "day_of_week", "created_at", "updated_at") VALUES (6, 3, '2025-12-21 14:16:59.398736', '2025-12-21 14:16:59.398736') RETURNING "id" /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='SmartScoreCounter',controller='settings'*/[0m
+  ↳ app/controllers/settings_controller.rb:40:in 'block in SettingsController#save_schedule_days!'
+Redirected to http://127.0.0.1:3000/
+↳ app/controllers/settings_controller.rb:13:in 'SettingsController#update'
+Completed 302 Found in 12ms (ActiveRecord: 3.4ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-12-21 17:16:59 +0300
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/application_controller.rb:8:in 'ApplicationController#current_user'
+  [1m[36mScheduleDay Pluck (0.1ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6 /*action='index',application='SmartScoreCounter',controller='main'*/[0m
+  ↳ app/controllers/main_controller.rb:10:in 'MainController#index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  [1m[36mCACHE ScheduleDay Pluck (0.0ms)[0m  [1m[34mSELECT "schedule_days"."day_of_week" FROM "schedule_days" WHERE "schedule_days"."user_id" = 6[0m
+  ↳ app/views/main/index.html.erb:232
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered main/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
