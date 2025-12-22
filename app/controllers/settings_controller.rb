@@ -21,7 +21,7 @@ class SettingsController < ApplicationController
     delta = params[:delta].to_i
     current = @user.current_points || 0
 
-    new_value = [current + delta, 0].max
+    new_value = [[current + delta, 0].max, 100].min
 
     @user.update!(current_points: new_value)
 
