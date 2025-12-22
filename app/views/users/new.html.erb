@@ -11,17 +11,16 @@
 
       body {
           font-family: Arial, sans-serif;
-          line-height: 1.6;
+          line-height: 1.4;
           display: flex;
           flex-direction: column;
           min-height: 100vh;
       }
 
-      /* Top Section */
       .top-section {
           background-color: #4477AA;
           color: white;
-          padding: 0;
+          padding: 0 0 0 0;
           height: 100px;
       }
 
@@ -30,13 +29,13 @@
           padding: 0 15px;
           display: flex;
           justify-content: normal;
-          align-items: center;
-          height: 100%;
       }
 
       .top-section h1 {
           font-size: 1.5rem;
           text-align: left;
+          padding-top: 20px;
+          padding-left: 0;
           margin: 0;
           font-weight: 500;
       }
@@ -48,7 +47,6 @@
           margin-left: auto;
       }
 
-      /* Delimiter Section */
       .delimiter-section {
           background-color: #f3f3f3;
           padding: 0 15px;
@@ -57,7 +55,7 @@
           align-items: center;
       }
 
-      /* Log Button Styles */
+      /* Buttons */
       .log-button {
           color: dimgray;
           font-size: 14px;
@@ -67,9 +65,9 @@
           height: 30px;
           border-radius: 5px;
           border: 1px solid darkgrey;
-          display: inline-block;
           background: #FFFFFF;
           cursor: pointer;
+          text-align: left;
       }
 
       .log-button:hover {
@@ -80,11 +78,50 @@
           box-shadow: 1px 2px 7px 4px rgba(68,119,170,0.38);
       }
 
-      button.log-button {
-          text-align: left;
+      /* Form */
+      .form-container {
+          padding: 15px;
+          display: flex;
+          justify-content: center; /* по горизонтали */
       }
 
-      /* Bottom Section */
+      .form-container form {
+          width: 100%;
+          max-width: 400px; /* аккуратная ширина формы */
+      }
+
+      .field {
+          position: relative;
+          margin-bottom: 22px; /* расстояние между полями */
+      }
+
+      .field label {
+          display: block;
+          margin-bottom: 4px;
+          font-size: 14px;
+      }
+
+      .field input {
+          display: block;
+          width: 100%;
+          padding: 8px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      .error-message {
+          position: absolute;
+          left: 0;
+          top: 100%;
+          margin-top: 2px;
+          font-size: 12px;
+          line-height: 12px;
+          color: red;
+          max-width: 300px;
+      }
+
+      /* Footer */
       .bottom-section {
           background-color: #f3f3f3;
           padding: 20px 0;
@@ -92,10 +129,11 @@
       }
   </style>
 </head>
+
 <body>
 <div class="top-section">
   <div class="header-container">
-    <h1>Интерактивный подсчет баллов физкультуры ЮФУ</h1>
+    <h1 style="margin-left: 0; padding-left: 0;">Интерактивный подсчет баллов физкультуры ЮФУ</h1>
     <%= image_tag("logo.png", alt: "Logo", class: "logo") %>
   </div>
 </div>
@@ -104,31 +142,55 @@
   <%= button_to 'Войти', "/login", method: :get, class: "log-button" %>
 </div>
 
-<div style="padding-left: 15px">
+<div class="form-container">
   <%= form_with model: @user, url: signup_path do |f| %>
-    <div>
-      <%= f.label :name, "Имя" %><br>
+
+    <div class="field">
+      <%= f.label :name, "Имя" %>
       <%= f.text_field :name %>
+
+      <% if @user.errors[:name].any? %>
+        <div class="error-message">
+          <%= @user.errors[:name].first %>
+        </div>
+      <% end %>
     </div>
 
-    <div>
-      <%= f.label :login, "Ник" %><br>
+    <div class="field">
+      <%= f.label :login, "Ник" %>
       <%= f.text_field :login %>
+
+      <% if @user.errors[:login].any? %>
+        <div class="error-message">
+          <%= @user.errors[:login].first %>
+        </div>
+      <% end %>
     </div>
 
-    <div>
-      <%= f.label :password, "Пароль" %><br>
+    <div class="field">
+      <%= f.label :password, "Пароль" %>
       <%= f.password_field :password %>
+
+      <% if @user.errors[:password].any? %>
+        <div class="error-message">
+          <%= @user.errors[:password].first %>
+        </div>
+      <% end %>
     </div>
 
-    <div>
-      <%= f.label :password_confirmation, "Пароль ещё раз" %><br>
+    <div class="field">
+      <%= f.label :password_confirmation, "Пароль ещё раз" %>
       <%= f.password_field :password_confirmation %>
+
+      <% if @user.errors[:password_confirmation].any? %>
+        <div class="error-message">
+          <%= @user.errors[:password_confirmation].first %>
+        </div>
+      <% end %>
     </div>
 
-    <div style="padding-top: 15px">
-      <%= f.submit "Создать аккаунт", class: "log-button"%>
-    </div>
+    <%= f.submit "Создать аккаунт", class: "log-button" %>
+
   <% end %>
 </div>
 
