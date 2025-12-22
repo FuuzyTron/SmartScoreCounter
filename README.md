@@ -1,7 +1,7 @@
 # SmartScoreCounter
 
 SmartScoreCounter helps students at SFedU optimize their physical education attendance strategy to reach target points (60-100) using minimal attendances. Calculates optimal term 1 vs term 2 based on selected weekdays.​
-## 🎯 Features
+## Features
 
  Weekday Calendar Selection - Choose Mon/Wed/Fri etc. via highlighted month_calendar
 
@@ -13,7 +13,7 @@ SmartScoreCounter helps students at SFedU optimize their physical education atte
 
  User Dashboard - Personalized schedule, current points, and optimal strategy display
 
-# 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone & Install
@@ -23,5 +23,9 @@ bundle install
 bin/rails db:migrate
 bin/rails db:seed  # Creates test users
 
-# Start with asset watching (Tailwind)
-./bin/dev
+```
+
+## Team Members:
+* Ликутин Даниил
+* Худых Михаил
+* Бондарь Герман
