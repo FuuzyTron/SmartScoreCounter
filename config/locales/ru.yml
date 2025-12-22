@@ -5,3 +5,13 @@ ru:
     next: ">>"
     today: Сегодня
     week: Неделя
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            login:
+              blank: "обязателен"
+              taken: "уже занят"
+            password_confirmation:
+              confirmation: "не совпадает с паролем"

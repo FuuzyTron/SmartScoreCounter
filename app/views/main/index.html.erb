@@ -67,14 +67,19 @@
           display: inline-block;
           background: #FFFFFF;
       }
+
       .log-button:hover {
-          background: ghostwhite; }
-      .log-button:active {
-          box-shadow: 1px 2px 7px 4px rgba(68,119,170,0.38)
+          background: ghostwhite;
       }
+
+      .log-button:active {
+          box-shadow: 1px 2px 7px 4px rgba(68, 119, 170, 0.38)
+      }
+
       button.log-button {
           text-align: left;
       }
+
       .content {
           max-width: 1200px;
           margin: 40px auto;
@@ -219,7 +224,9 @@
   </div>
 </div>
 
-<%= form_with model: current_user, url: settings_path, method: :patch, id: "main-form" do %>
+<% if current_user %>
+  <%= form_with model: current_user, url: settings_path, method: :patch, id: "main-form" do %>
+  <% end %>
 
 <% end %>
 
@@ -256,7 +263,8 @@
     <% if current_user %>
       <div class="settings-container">
         <div class="radio-group">
-          <%= label_tag "user_target_points", "Цель (диапазон баллов)", style: "font-weight: bold; font-size: 16px;" %><br>
+          <%= label_tag "user_target_points", "Цель (диапазон баллов)", style: "font-weight: bold; font-size: 16px;" %>
+          <br>
 
           <% current_value = current_user.target_points.to_i %>
           <% selected_60 = current_value >= 60 && current_value <= 70 %>
@@ -280,7 +288,8 @@
         </div>
 
         <div class="goal-slider-container">
-          <%= label_tag "user_semester_goal_lessons", "Хочу занятий в семестре", style: "font-weight: bold; font-size: 16px;" %><br>
+          <%= label_tag "user_semester_goal_lessons", "Хочу занятий в семестре", style: "font-weight: bold; font-size: 16px;" %>
+          <br>
 
           <% current_lessons = current_user.semester_goal_lessons || 10 %>
 
@@ -293,9 +302,10 @@
                    value="<%= current_lessons %>"
                    class="slider"
                    form="main-form"
-                   oninput="updateSliderValue(this.value)"
+                   oninput="updateSliderValue(this.value); updatePointsStrategy(this.value)"
             >
           </div>
+
 
           <div id="sliderValue" class="slider-value"><%= current_lessons %> занятий</div>
         </div>
@@ -310,7 +320,7 @@
 
     <div class="calendar-container">
       <%= month_calendar do |date| %>
-        <div style="text-align: center; padding: 5px;">
+        <div>
           <%= date.day %>
         </div>
       <% end %>
@@ -327,15 +337,15 @@
 
         <% if current_user && @points_strategy && @points_strategy[:possible] %>
           <div style="margin-top: 20px; text-align: center; font-size: 14px;">
-            Чтобы набрать минимум <%= @points_strategy[:total_points] %> баллов
-            при выбранных днях, посетите
-            <b><%= @points_strategy[:attend_term1] %></b> занятий осенью
-            и <b><%= @points_strategy[:attend_term2] %></b> занятий весной.
+            Вы наберёте <%= @points_strategy[:total_points] %> баллов
+            при выбранных днях, посетив
+            <b><%= @points_strategy[:attend_term1] %></b> занятий в первом семестре
+            и <b><%= @points_strategy[:attend_term2] %></b> занятий во втором семестре.
           </div>
         <% elsif current_user && @points_strategy %>
           <div style="margin-top: 20px; text-align: center; font-size: 14px; color: #a00;">
             При выбранных днях максимальный возможный результат —
-            <%= @points_strategy[:max_points] %> баллов. Этого недостаточно
+            <%= @points_strategy[:total_points] %> баллов. Этого недостаточно
             для выбранного диапазона.
           </div>
         <% end %>
@@ -374,15 +384,61 @@
 </div>
 <script>
     function updateSliderValue(value) {
-        document.querySelector('.slider-value').textContent = value + ' занятий';
+        document.querySelector('#sliderValue').textContent = value + ' занятий';
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    function updatePointsStrategy(lessons) {
+        fetch('/main/calculate_strategy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({
+                semester_goal_lessons: parseInt(lessons),
+                target_points: document.querySelector('input[name="user[target_points]"]:checked')?.value || 60
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Обновляем правую панель
+                document.querySelector('.current-points-value').textContent = data.current_points;
+
+                const strategyDiv = document.querySelector('.current-points-display div[style*="margin-top: 20px"]');
+                if (data.possible) {
+                    strategyDiv.innerHTML = `
+                Вы наберёте <b>${data.total_points}</b> баллов
+                при выбранных днях, посетив <b>${data.attend_term1}</b> занятий в первом семестре и
+                <b>${data.attend_term2}</b> во втором семестре.
+            `;
+                    strategyDiv.style.color = '';
+                } else {
+                    strategyDiv.innerHTML = `
+                При выбранных днях максимальный возможный результат —
+                <b>${data.total_points}</b> баллов. Этого недостаточно для выбранного диапазона.
+            `;
+                    strategyDiv.style.color = '#a00';
+                }
+            });
+    }
+
+    // При загрузке
+    document.addEventListener('DOMContentLoaded', function () {
         const slider = document.getElementById('semester_goal_slider');
         if (slider) {
             updateSliderValue(slider.value);
         }
+
+        // Обновляем при смене radio
+        document.querySelectorAll('input[name="user[target_points]"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const slider = document.getElementById('semester_goal_slider');
+                if (slider) updatePointsStrategy(slider.value);
+            });
+        });
     });
+</script>
+
 </script>
 <footer class="bottom-section">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">

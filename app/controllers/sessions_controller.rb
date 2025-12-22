@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to login_path, notice: "Выход выполнен"
+    redirect_to root_path, notice: "Выход выполнен"
   end
 end

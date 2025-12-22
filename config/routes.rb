@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   patch "/settings", to: "settings#update"
 
   patch "/update_points", to: "settings#update_points", as: "update_current_points"
+  post '/main/calculate_strategy', to: 'main#calculate_strategy'
 end
